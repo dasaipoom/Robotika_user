@@ -1,17 +1,23 @@
 
-#javascript #nextjs #css #tutorial
+# Dockerfile
 FROM node:16-alpine
 
-WORKDIR /frontend
+# create destination directory
+RUN mkdir -p /usr/src/robotika-face-page
+WORKDIR /usr/src/robotika-face-page
 
-COPY package*.json ./
+# update and install dependency
+RUN apk update && apk upgrade
+RUN apk add git
 
-
-
-COPY . .
+# copy the app, note .dockerignore
+COPY . /usr/src/robotika-face-page/
 RUN npm install
 RUN npm run build
-EXPOSE 85:3000
 
+EXPOSE 3000
 
-CMD ["npm", "start"]
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=3000
+
+CMD [ "npm", "start" ]
