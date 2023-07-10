@@ -8,10 +8,10 @@ import rateLimit from "../../utils/rateLimit";
 import { CompreFace } from "@exadel/compreface-js-sdk";
 import { constants } from "buffer";
 import { PathLike } from "fs";
-
+let hostIp = process.env.HOST_IP;
 // setup compare face
 let api_key = "6c060f29-4690-402a-a5ab-8d4b44115f5a";
-let url = "http://localhost";
+let url = `http://${hostIp}`;
 let port = 83;
 let faceoptions = {
   limit: 0,

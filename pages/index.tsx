@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+let hostIp = process.env.HOST_IP;
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <div className="pt-40"></div>
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-2 gap-20 lg:text-left">
         <Link
-          href="http://27.254.173.212:8003"
+          
+          href= {`http://${hostIp}:83/`}
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
