@@ -14,6 +14,7 @@ console.log(hostIp);
 // setup compare face
 let api_key = "6c060f29-4690-402a-a5ab-8d4b44115f5a";
 let url = `http://${hostIp}`;
+// let url = `http://27.254.173.212`;
 let port = 8003;
 let faceoptions = {
   limit: 0,
@@ -22,6 +23,8 @@ let faceoptions = {
   face_plugins: "calculator,age,gender",
   status: true,
 };
+console.log(url);
+
 // create face function
 let compreFace = new CompreFace(url, port); // set CompreFace url and port
 let recognitionService = compreFace.initFaceRecognitionService(api_key); // initialize service

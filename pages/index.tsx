@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-
+const hostIp = process.env.HOST_IP;
 
 export default function Home() {
-  const hostIp = process.env.HOST_IP;
   console.log(hostIp);
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
