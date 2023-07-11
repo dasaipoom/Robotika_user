@@ -29,7 +29,7 @@ export default function Home() {
           <div className="pt-20"></div>
           <h3 className={`mb-3 text-2xl font-semibold opacity-70`}>Call api with</h3>
           <p className={`m-0 max-w-[100ch] text-xl opacity-50`}>
-          (Your server IP):85/api/recognize
+          (Your server IP):3003/api/recognize
           </p>
           <div className="pt-10"></div>
           <h3 className={`mb-3 text-2xl font-semibold opacity-70`}>Example with cURL</h3>
@@ -59,7 +59,7 @@ export default function Home() {
           <div className="pt-20"></div>
           <h3 className={`mb-3 text-2xl font-semibold opacity-70`}>Call api with</h3>
           <p className={`m-0 max-w-[100ch] text-xl opacity-50`}>
-          (Your server IP):85/api/recognizeurl
+          (Your server IP):3003/api/recognizeurl
           </p>
           <div className="pt-10"></div>
           <h3 className={`mb-3 text-2xl font-semibold opacity-70`}>Example with cURL</h3>

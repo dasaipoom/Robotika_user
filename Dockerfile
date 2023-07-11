@@ -5,7 +5,7 @@ FROM node:16-alpine
 # create destination directory
 RUN mkdir -p /usr/src/robotika-face-page
 WORKDIR /usr/src/robotika-face-page
-ENV HOST_IP ""
+
 # update and install dependency
 RUN apk update && apk upgrade
 RUN apk add git
@@ -17,6 +17,7 @@ RUN npm run build
 
 EXPOSE 8001
 
+ENV HOST_IP = "0.0.0.0"
 ENV NEXT_HOST=0.0.0.0
 ENV NEXT_PORT=3003
 

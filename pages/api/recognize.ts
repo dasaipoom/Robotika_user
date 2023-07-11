@@ -8,7 +8,8 @@ import rateLimit from "../../utils/rateLimit";
 import { CompreFace } from "@exadel/compreface-js-sdk";
 import { constants } from "buffer";
 
-let hostIp = process.env.HOST_IP;
+const hostIp = process.env.HOST_IP;
+console.log(hostIp);
 
 //setup compare face
 let api_key = "6c060f29-4690-402a-a5ab-8d4b44115f5a";
