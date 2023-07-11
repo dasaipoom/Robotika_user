@@ -17,7 +17,7 @@ RUN npm run build
 
 EXPOSE 8001
 
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3003
+ENV NEXT_HOST=0.0.0.0
+ENV NEXT_PORT=3003
 
 CMD [ "npm", "start" ]
