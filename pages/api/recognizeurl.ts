@@ -13,9 +13,9 @@ const hostIp = process.env.HOST_IP;
 console.log(hostIp);
 // setup compare face
 let api_key = "6c060f29-4690-402a-a5ab-8d4b44115f5a";
-let url = `http://${hostIp}`;
+let url = `http://compreface-fe`;
 // let url = `http://27.254.173.212`;
-let port = 8003;
+let port = 80;
 let faceoptions = {
   limit: 0,
   det_prob_threshold: 0.98,
