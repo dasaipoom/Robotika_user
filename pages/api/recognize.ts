@@ -13,7 +13,7 @@ console.log(hostIp);
 
 //setup compare face
 let api_key = "6c060f29-4690-402a-a5ab-8d4b44115f5a";
-let url = `http://compreface-fe`;
+let url = `http://compreface-ui`;
 let port = 80;
 let faceoptions = {
   limit: 0,

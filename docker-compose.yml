@@ -14,7 +14,8 @@ services:
     ports:
       - "8001:3003"
     volumes:
-      - robotika_images:/usr/src/robotika-face-page/public/images
+      - ./public/image:/usr/src/robotika-face-page/public/images  # bind mount
+      - robotika_images:/usr/src/robotika-face-page/public/images 
 
 volumes:
   robotika_images:
