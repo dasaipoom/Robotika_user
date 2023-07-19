@@ -21,3 +21,4 @@ volumes:
 
 networks:
   face_network:
+    external: true
