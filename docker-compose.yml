@@ -8,7 +8,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - HOST_IP=${HOST_IP}
+      - NEXT_PUBLIC_HOST_IP=${HOST_IP}
     networks:
       - face_network
     ports:

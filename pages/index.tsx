@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-const hostIp = process.env.HOST_IP;
+const hostIp = process.env.NEXT_PUBLIC_HOST_IP;
 
 export default function Home() {
   console.log(hostIp);
