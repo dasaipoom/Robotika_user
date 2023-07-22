@@ -36,10 +36,14 @@ const limiter = rateLimit({
 });
 async function reclocalpic() {
   const imgdir = await fs.readdir(
-    path.join(process.cwd() + "/public", "/images")
+    path.join(process.cwd() + "/public", "/testimage")
   );
   const filePath =
-    path.join(process.cwd() + "/public", "/images") + `/${imgdir[0]}`;
+    path.join(process.cwd() + "/public", "/testimage") + `/Test.jpg`;
+
+
+    console.log(filePath);
+    console.log(imgdir);
   if (filePath) {
     try {
       const response = (await recognitionService.recognize(
@@ -49,8 +53,6 @@ async function reclocalpic() {
         result: { subjects: any[] }[];
         plugins_versions: Record<string, string>;
       };
-      await fs.unlink(filePath);
-      console.log(`Image file ${filePath} deleted successfully`);
       const subjects = response.result[0]?.subjects;
       console.log(subjects);
       if (subjects) {
@@ -84,37 +86,15 @@ export const config = {
   },
 };
 
-const readFile = (
-  req: NextApiRequest,
-  saveLocally?: boolean
-): Promise<{ fields: formidable.Fields; files: formidable.Files }> => {
-  const options: formidable.Options = {};
-  if (saveLocally) {
-    options.uploadDir = path.join(process.cwd(), "/public/images");
-    options.filename = (name, ext, path, form) => {
-      return "Processimg" + "_" + path.originalFilename;
-    };
-    console.log(`Image file save successfully`);
-  }
-  options.maxFileSize = 4000 * 1024 * 1024;
-  const form = formidable(options);
-  return new Promise((resolve, reject) => {
-    form.parse(req, (err, fields, files) => {
-      if (err) reject(err);
-      resolve({ fields, files });
-    });
-  });
-};
+
 
 const handler: NextApiHandler = async (req, res) => {
   try {
-    await fs.readdir(path.join(process.cwd() + "/public", "/images"));
+    await fs.readdir(path.join(process.cwd() + "/public", "/testimage"));
   } catch (error) {
-    await fs.mkdir(path.join(process.cwd() + "/public", "/images"));
+    await fs.mkdir(path.join(process.cwd() + "/public", "/testimage"));
   }
   try {
-    await limiter.check(res, "CACHE_TOKEN");
-    await readFile(req, true);
     const face_res = await reclocalpic();
     if (Array.isArray(face_res) && face_res.length > 0) {
       const result = {
